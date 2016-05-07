@@ -1,0 +1,310 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:8Bit-MCU
+LIBS:32Bit-MCU-mikkel-HP-ENVY-Notebook
+LIBS:arduino
+LIBS:Arduino_shields
+LIBS:concept-explanation
+LIBS:connector
+LIBS:diodes
+LIBS:electro-mechanical
+LIBS:passives
+LIBS:power-management
+LIBS:semiconductors
+LIBS:sensors
+LIBS:USB
+LIBS:rpi-shutdown-v0-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 2
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L ATTINY85-S IC1
+U 1 1 572E14D7
+P 6400 3750
+F 0 "IC1" H 5250 4150 50  0000 C CNN
+F 1 "ATTINY85-S" H 7400 3350 50  0000 C CNN
+F 2 "Housings_SOIC:SOIJ-8_5.3x5.3mm_Pitch1.27mm" H 7350 3750 50  0001 C CIN
+F 3 "" H 6400 3750 50  0000 C CNN
+	1    6400 3750
+	-1   0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR01
+U 1 1 572E1564
+P 2900 3600
+F 0 "#PWR01" H 2900 3450 50  0001 C CNN
+F 1 "+5V" H 2900 3740 50  0000 C CNN
+F 2 "" H 2900 3600 50  0000 C CNN
+F 3 "" H 2900 3600 50  0000 C CNN
+	1    2900 3600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L GND #PWR02
+U 1 1 572E158A
+P 5000 4050
+F 0 "#PWR02" H 5000 3800 50  0001 C CNN
+F 1 "GND" H 5000 3900 50  0000 C CNN
+F 2 "" H 5000 4050 50  0000 C CNN
+F 3 "" H 5000 4050 50  0000 C CNN
+	1    5000 4050
+	-1   0    0    -1  
+$EndComp
+$Sheet
+S 8250 3500 550  300 
+U 572E1AF1
+F0 "relays" 60
+F1 "relays.sch" 60
+F2 "CH:2" I L 8250 3700 60 
+F3 "CH:1" I L 8250 3600 60 
+$EndSheet
+$Comp
+L Switch_DPST SW1
+U 1 1 572E32EE
+P 8250 2850
+F 0 "SW1" H 8550 2900 50  0000 C CNN
+F 1 "Switch_DPST" H 8550 2800 50  0000 C CNN
+F 2 "Connect:AK300-2" H 8250 2850 50  0001 C CNN
+F 3 "" H 8250 2850 50  0000 C CNN
+	1    8250 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR03
+U 1 1 572E33ED
+P 8600 3100
+F 0 "#PWR03" H 8600 2850 50  0001 C CNN
+F 1 "GND" H 8600 2950 50  0000 C CNN
+F 2 "" H 8600 3100 50  0000 C CNN
+F 3 "" H 8600 3100 50  0000 C CNN
+	1    8600 3100
+	-1   0    0    -1  
+$EndComp
+Text GLabel 7750 2650 0    60   Input ~ 0
+Live_A
+Text GLabel 8750 2650 2    60   Output ~ 0
+Live_B
+$Comp
+L C_Small C1
+U 1 1 572E4397
+P 5000 3750
+F 0 "C1" H 5010 3820 50  0000 L CNN
+F 1 "C_Small" H 5010 3670 50  0000 L CNN
+F 2 "Capacitors_SMD:C_1206_HandSoldering" H 5000 3750 50  0001 C CNN
+F 3 "" H 5000 3750 50  0000 C CNN
+	1    5000 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X02 P1
+U 1 1 572E458D
+P 2250 3850
+F 0 "P1" H 2250 4000 50  0000 C CNN
+F 1 "5V in" V 2350 3850 50  0000 C CNN
+F 2 "Connect:AK300-2" H 2250 3850 50  0001 C CNN
+F 3 "" H 2250 3850 50  0000 C CNN
+	1    2250 3850
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5000 3850 5000 4050
+Wire Wire Line
+	5000 3450 5000 3650
+Wire Wire Line
+	7750 3600 8250 3600
+Wire Wire Line
+	7750 3700 8250 3700
+Wire Wire Line
+	7750 3500 7850 3500
+Wire Wire Line
+	7850 3500 7850 3050
+Wire Wire Line
+	7850 3050 7950 3050
+Wire Wire Line
+	8600 3100 8600 3050
+Wire Wire Line
+	8600 3050 8550 3050
+Wire Wire Line
+	7950 2650 7750 2650
+Wire Wire Line
+	8550 2650 8750 2650
+Connection ~ 5000 3500
+Connection ~ 5000 4000
+$Comp
+L AP1117D33 U1
+U 1 1 572E59BF
+P 3250 3650
+F 0 "U1" H 3350 3400 50  0000 C CNN
+F 1 "AP1117D33" H 3250 3900 50  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:TO-252-2Lead" H 3250 3650 50  0001 C CNN
+F 3 "" H 3250 3650 50  0000 C CNN
+	1    3250 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR04
+U 1 1 572E5D32
+P 3250 4050
+F 0 "#PWR04" H 3250 3800 50  0001 C CNN
+F 1 "GND" H 3250 3900 50  0000 C CNN
+F 2 "" H 3250 4050 50  0000 C CNN
+F 3 "" H 3250 4050 50  0000 C CNN
+	1    3250 4050
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	3250 4050 3250 3950
+Wire Wire Line
+	2550 4000 3600 4000
+Connection ~ 3250 4000
+Wire Wire Line
+	2900 3600 2900 3750
+Wire Wire Line
+	2550 3650 2950 3650
+$Comp
+L C_Small C3
+U 1 1 572E5F67
+P 2900 3850
+F 0 "C3" H 2910 3920 50  0000 L CNN
+F 1 "C_Small" V 2950 3500 50  0000 L CNN
+F 2 "Capacitors_SMD:C_1206_HandSoldering" H 2900 3850 50  0001 C CNN
+F 3 "" H 2900 3850 50  0000 C CNN
+	1    2900 3850
+	-1   0    0    -1  
+$EndComp
+Connection ~ 2900 3650
+Wire Wire Line
+	2900 4000 2900 3950
+$Comp
+L C_Small C4
+U 1 1 572E6161
+P 3600 3850
+F 0 "C4" H 3610 3920 50  0000 L CNN
+F 1 "C_Small" H 3610 3770 50  0000 L CNN
+F 2 "Capacitors_SMD:C_1206_HandSoldering" H 3600 3850 50  0001 C CNN
+F 3 "" H 3600 3850 50  0000 C CNN
+	1    3600 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3600 4000 3600 3950
+Wire Wire Line
+	3600 3600 3600 3750
+Wire Wire Line
+	3550 3650 3600 3650
+Connection ~ 3600 3650
+$Comp
+L +3V3 #PWR05
+U 1 1 572E62E3
+P 3600 3600
+F 0 "#PWR05" H 3600 3450 50  0001 C CNN
+F 1 "+3V3" H 3600 3740 50  0000 C CNN
+F 2 "" H 3600 3600 50  0000 C CNN
+F 3 "" H 3600 3600 50  0000 C CNN
+	1    3600 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP_Small C2
+U 1 1 572E63A2
+P 2700 3850
+F 0 "C2" H 2710 3920 50  0000 L CNN
+F 1 "CP_Small" V 2650 3450 50  0000 L CNN
+F 2 "SMD_Packages:SMD-1206_Pol" H 2700 3850 50  0001 C CNN
+F 3 "" H 2700 3850 50  0000 C CNN
+	1    2700 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 3950 2700 4000
+Connection ~ 2900 4000
+Wire Wire Line
+	2700 3750 2700 3650
+$Comp
+L CONN_01X02 P4
+U 1 1 572E6C80
+P 8750 4100
+F 0 "P4" H 8750 4250 50  0000 C CNN
+F 1 "serial" V 8850 4100 50  0000 C CNN
+F 2 "Connect:AK300-2" H 8750 4100 50  0001 C CNN
+F 3 "" H 8750 4100 50  0000 C CNN
+	1    8750 4100
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	7750 3800 8100 3800
+Wire Wire Line
+	8100 3800 8100 4050
+Wire Wire Line
+	8100 4050 8550 4050
+Wire Wire Line
+	7750 3900 8000 3900
+Wire Wire Line
+	8000 3900 8000 4150
+Wire Wire Line
+	8000 4150 8550 4150
+$Comp
+L +3V3 #PWR06
+U 1 1 572E7312
+P 5000 3450
+F 0 "#PWR06" H 5000 3300 50  0001 C CNN
+F 1 "+3V3" H 5000 3590 50  0000 C CNN
+F 2 "" H 5000 3450 50  0000 C CNN
+F 3 "" H 5000 3450 50  0000 C CNN
+	1    5000 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5050 4000 5000 4000
+Wire Wire Line
+	5000 3500 5050 3500
+Wire Wire Line
+	2450 3900 2550 3900
+Wire Wire Line
+	2550 3900 2550 4000
+Connection ~ 2700 4000
+Wire Wire Line
+	2450 3800 2550 3800
+Wire Wire Line
+	2550 3800 2550 3650
+Connection ~ 2700 3650
+$EndSCHEMATC
